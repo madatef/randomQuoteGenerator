@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+@keyframes fade-in {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+}
+
+*, ::after, ::before {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+} 
 
 :root {
   --background: #ffffff;
@@ -17,11 +31,21 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.speech-bubble {
+  @apply relative bg-[#ffffff] rounded-[1em] w-[350px] min-h-[150px] flex flex-col justify-between p-4
+  md:w-[550px] md:min-h-[250px] md:p-6 md:pb-4
+  lg:w-[600px] 
+}
+.speech-bubble:after {
+  @apply absolute bottom-0 left-[20%] w-0 h-0 border-[10vw] border-transparent border-t-white border-l-0 border-b-0 ml-[-5vw] mb-[-9vw] content-[""] 
+  md:border-[9vw] md:ml-[-4.5vw] md:mb-[-8.5vw] md:border-l-0 md:border-b-0
+  lg:border-[60px] lg:ml-[-30px] lg:mb-[-58px] lg:border-l-0 lg:border-b-0
 }
