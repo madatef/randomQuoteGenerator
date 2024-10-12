@@ -51,7 +51,7 @@ export let myColor: string = colors[Math.floor(Math.random() * colors.length)];
 export let currQuote:string = 'We forgive on the occasion of ourselves being free-minded of all the rage and anger, not on that of others deserving forgivness.';
 export let currAuthor: string = 'Mohammad Atef';
 
-export const getQuotes = async (): Promise<object[]> => {
+export const getQuotes = async (): Promise<{quote: string, author: string}[]> => {
   try {
     const res = await fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json');
     const result = await res.json();
@@ -68,7 +68,8 @@ export const getQuotes = async (): Promise<object[]> => {
 
 export const randomQuote = async () => {
   let quotesArr = await getQuotes();
-  let quoteObj:object = quotesArr[Math.floor(Math.random() * quotesArr.length)];
+
+  let quoteObj:{quote: string, author: string} = quotesArr[Math.floor(Math.random() * quotesArr.length)];
   return quoteObj;
 }
 const updateUI = async () => {
