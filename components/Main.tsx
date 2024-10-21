@@ -12,7 +12,7 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 import $ from 'jquery'
 import { fetchQuote } from "@/utils"
 import Category from "./Category"
-import MyConfetti from "./Confetti"
+import MyConfetti from "./MyConfetti"
 
 
 
