@@ -1,21 +1,46 @@
+'use-client'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
 import "./globals.css";
-import {Roboto, Dancing_Script} from 'next/font/google'
+import {Roboto, Dancing_Script, Ballet, Lavishly_Yours, Luxurious_Script} from 'next/font/google'
 
 
-const roboto = Roboto({
+export const roboto = Roboto({
   subsets: ['latin'],
   display: 'swap',
   weight: ['100', '300', '400', '500', '700', '900'],
   variable: '--font-roboto'
 });
-const dancing = Dancing_Script({
+export const dancing = Dancing_Script({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '700'],
   variable: '--font-dancing'
 });
+export const ballet = Ballet(
+  {
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ['400'],
+    variable: '--font-ballet'
+  }
+);
+export const lavish = Lavishly_Yours(
+  {
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ['400'],
+    variable: '--font-lavish'
+  }
+);
+export const lux = Luxurious_Script(
+  {
+    subsets: ['latin'],
+    display: 'swap',
+    weight: ['400'],
+    variable: '--font-lux'
+  }
+);
 
 
 export const metadata: Metadata = {
@@ -30,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={lux.variable}>
         {children}
       </body>
     </html>

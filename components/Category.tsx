@@ -18,7 +18,7 @@ const Category = ({children, handleChange}: Readonly<{children?: React.ReactNode
 
             <Field>
                 <Label className="text-sm/6 font-medium text-white">Category</Label>
-                <Description className="text-sm/6 text-white/50">Forgiveness is selected by default. Choose one to change</Description>
+                <Description className="text-sm/6 text-white/50">Usually, forgiveness is selected by default, but today, birthday is defaulted in honor of the greatest and closest friend I made along the way. Choose one to change</Description>
                 <div className="relative">
                     <Select onChange={handleChange}
                         className={clsx(
@@ -30,8 +30,8 @@ const Category = ({children, handleChange}: Readonly<{children?: React.ReactNode
                         {
                                 categories.map(cat => {
                                     return (
-                                        <option key={cat} value={cat} style={{backgroundColor: `${myColor}`, opacity: 0.2}} selected={cat === 'forgiveness' ? true : false} className='focus:bg-blue-800'>
-                                            {cat} {cat === 'forgiveness' ? '(default)': ''}
+                                        <option key={cat} value={cat} style={{backgroundColor: `${myColor}`, opacity: 0.2}} selected={cat === 'birthday' ? true : false} className='focus:bg-blue-800'>
+                                            {cat} {cat === 'birthday' ? '(default)': ''}
                                         </option>
                                     )
                                 })

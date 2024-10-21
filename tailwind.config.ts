@@ -18,7 +18,10 @@ const config: Config = {
       },
       fontFamily: {
         roboto: 'var(--font-robot)',
-        dancing: 'var(--font-dancing)'
+        dancing: 'var(--font-dancing)',
+        ballet: 'var(--font-ballet)',
+        lavish: 'var(--font-lavish)',
+        lux: 'var(--font-lux)',
       },
       animation: {
         'fadein': 'fadeIn 0.5s ease-in-out'
