@@ -40,7 +40,7 @@ body {
   }
 }
 .speech-bubble {
-  @apply relative bg-[#ffffff] rounded-[1em] w-[350px] min-h-[150px] flex flex-col justify-between p-4
+  @apply relative bg-[#ffffff] rounded-[1em] w-[350px] min-h-[150px] flex flex-col justify-between p-4 max-h-[550px]
   md:w-[550px] md:min-h-[250px] md:p-6 md:pb-4
   lg:w-[600px] 
 }

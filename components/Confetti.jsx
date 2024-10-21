@@ -4,8 +4,8 @@ import Confetti from 'react-confetti'
 
 
 const MyConfetti =  () => {
-  const width = Window.width;
-  const height = Window.height;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
   return (
     <Confetti
       width={width}
