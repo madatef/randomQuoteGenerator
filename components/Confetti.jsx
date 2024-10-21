@@ -1,11 +1,11 @@
 'use-client'
 import React from 'react'
 import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use';
 
 
 const MyConfetti =  () => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const {width, height} = useWindowSize();
   return (
     <Confetti
       width={width}
