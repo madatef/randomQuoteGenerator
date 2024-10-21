@@ -10,10 +10,12 @@ import { useState } from "react"
 import { Bubble } from "./Bubble"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 import $ from 'jquery'
+import { fetchQuote } from "@/utils"
+import Category from "./Category"
 
 
 
-
+export let category = 'forgiveness'
 export  const colors = [
 	"#2d0087",
 	"#017835",
@@ -51,29 +53,11 @@ export let myColor: string = colors[Math.floor(Math.random() * colors.length)];
 export let currQuote:string = 'We forgive on the occasion of ourselves being free-minded of all the rage and anger, not on that of others deserving forgivness.';
 export let currAuthor: string = 'Mohammad Atef';
 
-export const getQuotes = async (): Promise<{quote: string, author: string}[]> => {
-  try {
-    const res = await fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json');
-    const result = await res.json();
-    const quotesArr = await result.quotes;
-    return quotesArr;
-  }
-  catch(error:any) {
-    myColor = "#ff0000";
-    return [{quote: `Error: couldn't resolve API response. \nError type: ${error.type}. \nMessage: ${error.message}`, author: 'some bug'}];
-  }
-
-}
 
 
-export const randomQuote = async () => {
-  let quotesArr = await getQuotes();
 
-  let quoteObj:{quote: string, author: string} = quotesArr[Math.floor(Math.random() * quotesArr.length)];
-  return quoteObj;
-}
 const updateUI = async () => {
-  let quoteObj = await randomQuote();
+  let quoteObj = await fetchQuote(category);
   currQuote = quoteObj.quote;
   currAuthor = quoteObj.author;
   myColor = colors[Math.floor(Math.random() * colors.length)];
@@ -111,8 +95,15 @@ const Main = () => {
         }
         
     }
+
+    function handleCatChange(e: React.FormEvent<HTMLSelectElement>) {
+      category = e.currentTarget.value;
+    }
+
+
   return (
-    <main  id="wrapper" style={{transition: 'background-color 0.8s ease-in-out, color 0.8s ease-in-out', backgroundColor: myColor, color: myColor}} className='flex items-center justify-center w-full h-screen'>
+    <main  id="wrapper" style={{transition: 'background-color 0.8s ease-in-out, color 0.8s ease-in-out', backgroundColor: myColor, color: myColor}} className='flex flex-col relative gap-2 place-items-start items-center ali justify-center  w-full h-screen'>
+        <Category handleChange={handleCatChange} />
         <Bubble >
           <div className="flex flex-col w-full">
               <Quote id='quoteEl' currQuote={quote} />
@@ -138,6 +129,7 @@ const Main = () => {
                     <FontAwesomeIcon icon={faSquareThreads} className="text-3xl rounded-[5px] lg:text-4xl" />
                     </Link>
                 </div>
+                <p> Category: {category}</p>
                 <button id="nextBtn" type="button" style={{transition: 'background-color 0.8s ease-in-out' , backgroundColor: myColor}} onClick={handleNextClick} className='px-5 rounded-[5px] md:rounded-lg h-[26px] md:h-[40px] text-white font-roboto'>Next</button>
             </div>
           </div>
