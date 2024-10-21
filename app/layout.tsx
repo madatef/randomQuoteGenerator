@@ -32,7 +32,7 @@ import {Roboto, Dancing_Script, Ballet, Lavishly_Yours, Luxurious_Script} from '
 //     variable: '--font-lavish'
 //   }
 // );
-export const lux = Luxurious_Script(
+const lux = Luxurious_Script(
   {
     subsets: ['latin'],
     display: 'swap',
