@@ -4,7 +4,7 @@ import Confetti from 'react-confetti'
 
 
 const MyConfetti =  () => {
-  const [windowSize, setWindowSize] = useState({width: undefined, height: undefined});
+  const [windowSize, setWindowSize] = useState({width: 400, height: 930});
   const handleResize = () => {
     setWindowSize({width: window.innerWidth, height: window.innerHeight});
   }
