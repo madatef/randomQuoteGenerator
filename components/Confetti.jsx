@@ -5,11 +5,11 @@ import { useWindowSize } from 'react-use';
 
 
 const MyConfetti =  () => {
-  const {width, height} = useWindowSize();
+
   return (
     <Confetti
-      width={width}
-      height={height}
+      width={window.innerWidth}
+      height={window.innerHeight}
     />
   )
 }
