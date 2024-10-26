@@ -7,7 +7,7 @@ const Author = ({
   id?: string;
 }>) => {
   return (
-    <div id={id} className="flex w-full text-sm font-roboto justify-end p-2 pt-0">
+    <div id={id} className="flex w-full text-lg font-roboto justify-end p-2 pt-0">
        - {currAuthor}
     </div>
   )

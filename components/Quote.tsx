@@ -17,7 +17,7 @@ export const Quote = ({
         </div>
 
         <div className="flex justify-between align-bottom w-full h-full">
-          <span id="quoteTxt" className="font-dancing my-[10px] text-sm lg:pt-2 text-justify h-full">
+          <span id="quoteTxt" className="font-dancing my-[10px] text-lg lg:pt-2 text-justify h-full">
               {currQuote}
           </span>
           <div className="flex flex-col justify-end ml-[5px]">

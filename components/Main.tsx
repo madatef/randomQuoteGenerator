@@ -12,11 +12,11 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 import $ from 'jquery'
 import { fetchQuote } from "@/utils"
 import Category from "./Category"
-import MyConfetti from "./MyConfetti"
+// import MyConfetti from "./MyConfetti"
 
 
 
-export let category = 'birthday'
+export let category = 'forgiveness'
 export  const colors = [
 	"#2d0087",
 	"#017835",
@@ -49,14 +49,12 @@ export  const colors = [
 	"#360019",
 	"#7d016b"
 ];
-export let myColor = '#1d4ed8'
+export let myColor = colors[Math.floor(Math.random() * colors.length)]
 
-// export let myColor: string = colors[Math.floor(Math.random() * colors.length)];
-
-export let currQuote:string = "Sometimes I just feel like life doesn't make sense. But you know what? we don't need to figure life out in this exact moment..so I should go easy on myself.. I gotta look at what I most feel like doing and stay open to what life brings me. I guess life is trying to wake me from my conceptual slumber. Like it's an opportunity to awaken to who I truly am and to let go of what's no longer useful, but.. the more you think you know what life is about, the more you suffer. The more flexible your beliefs are, the smoother your ride is, because you're more open to the present moment.";
-export let currAuthor: string = 'Hummingbird. Oct 10th, 2018';
-// export let currQuote:string = 'We forgive on the occasion of ourselves being free-minded of all the rage and anger, not on that of others deserving forgivness.';
-// export let currAuthor: string = 'Mohammad Atef';
+// export let currQuote:string = "Sometimes I just feel like life doesn't make sense. But you know what? we don't need to figure life out in this exact moment..so I should go easy on myself.. I gotta look at what I most feel like doing and stay open to what life brings me. I guess life is trying to wake me from my conceptual slumber. Like it's an opportunity to awaken to who I truly am and to let go of what's no longer useful, but.. the more you think you know what life is about, the more you suffer. The more flexible your beliefs are, the smoother your ride is, because you're more open to the present moment.";
+// export let currAuthor: string = 'Hummingbird. Oct 10th, 2018';
+export let currQuote:string = 'We forgive on the occasion of ourselves being free-minded of all the rage and anger, not on that of others deserving forgivness.';
+export let currAuthor: string = 'Mohammad Atef';
 
 
 
@@ -102,13 +100,14 @@ const Main = () => {
 
     function handleCatChange(e: React.FormEvent<HTMLSelectElement>) {
       category = e.currentTarget.value;
+      
     }
 
 
   return (
     <main  id="wrapper" style={{transition: 'background-color 0.8s ease-in-out, color 0.8s ease-in-out', backgroundColor: myColor, color: myColor}} className='flex flex-col relative gap-2 place-items-start items-center ali justify-center  w-full h-screen'>
         <Category handleChange={handleCatChange} />
-        <MyConfetti />
+        {/* <MyConfetti /> */}
         <p className='text-black text-center text-2xl'>Happy 25th birthday, <span style={{color: '#f78181'}} className="font-sans text-4xl">Hummingbird!</span></p>
         <Bubble >
           <div className="flex flex-col w-full">
