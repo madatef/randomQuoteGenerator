@@ -108,7 +108,7 @@ const Main = () => {
     <main  id="wrapper" style={{transition: 'background-color 0.8s ease-in-out, color 0.8s ease-in-out', backgroundColor: myColor, color: myColor}} className='flex flex-col relative gap-2 place-items-start items-center ali justify-center  w-full h-screen'>
         <Category handleChange={handleCatChange} />
         {/* <MyConfetti /> */}
-        <p className='text-black text-center text-2xl'>Happy 25th birthday, <span style={{color: '#f78181'}} className="font-sans text-4xl">Hummingbird!</span></p>
+        {/* <p className='text-black text-center text-2xl'>Happy 25th birthday, <span style={{color: '#f78181'}} className="font-sans text-4xl">Hummingbird!</span></p> */}
         <Bubble >
           <div className="flex flex-col w-full">
               <Quote id='quoteEl' currQuote={quote} />
