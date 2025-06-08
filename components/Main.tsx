@@ -63,6 +63,7 @@ const updateUI = async () => {
   let quoteObj = await fetchQuote(category);
   currQuote = quoteObj.quote;
   currAuthor = quoteObj.author;
+  category = quoteObj.category;
   myColor = colors[Math.floor(Math.random() * colors.length)];
 }
 

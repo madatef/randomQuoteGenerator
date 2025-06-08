@@ -5,7 +5,7 @@
 
 export const fetchQuote = async (category: string): Promise<{quote: string, author: string, category: string}> => {
        try {
-            const res = await fetch('https://api.api-ninjas.com/v1/quotes?category=' + category, {
+            const res = await fetch('https://api.api-ninjas.com/v1/quotes', {
                 method: 'GET',
                 headers: {
                     'X-Api-Key': '8fQNaqpDwvbIT0r06Ye39w==d2MTbdkmicVekxCu',
@@ -13,6 +13,7 @@ export const fetchQuote = async (category: string): Promise<{quote: string, auth
                 }
             });
             const result = await res.json();
+            console.log(`fetch result: ${JSON.stringify(result)}`);
             return result[0];
         } catch(error: any) {
             return {quote: `Error: couldn't resolve API response. \nError type: ${error.type}. \nMessage: ${error.message}`, author: `some bug`, category: 'happiness'}

@@ -26,6 +26,7 @@ const Category = ({
                 <div className="relative">
                     <Select onChange={handleChange}
                         className="mt-3 block w-full appearance-none rounded-lg border-none bg-white/5 py-1.5 px-3 text-sm/6 text-white focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
+                        disabled={true}
                         
                     >
                         {
@@ -43,6 +44,7 @@ const Category = ({
                         aria-hidden="true"
                     />
                 </div>
+                <Description className="text-sm text-white/60">This option is disabled becuase API Ninjas moved filtering by category to the premium subscription</Description>
             </Field>
         </div>
     )
